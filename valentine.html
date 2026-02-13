@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Saurav ❤️ Tanishqa</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    top: 30%;
+}
+
+h1,h2 {
+    color: white;
+}
+
+button {
+    font-size: 22px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#yes { background:#ff2d55; color:white; }
+#no { position:absolute; background:#333; color:white; }
+
+#popup {
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    padding:30px;
+    border-radius:20px;
+}
+
+#popup img {
+    width:220px;
+    border-radius:20px;
+    margin-top:15px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    to { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+</audio>
+
+<div class="container">
+    <h2>Saurav ❤️ Tanishqa</h2>
+    <h1>Will you be my Valentine, Tanishqa? 💘</h1>
+
+    <button id="yes" onclick="yesClick()">Yes ❤️</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
+</div>
+
+<div id="popup">
+    <h2>I Love You Tanishqa ❤️</h2>
+    <img src="Tanishqa.jpeg">
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const texts = ["Try again 😜","Nope 😏","Think again ❤️","Not possible 😆","Still no? 😂","One last time 🫰","Just Kidding this is last 😒","Abee oyee 😤","Naa Kare janab 😫","Ladli Try again 😉","Abe bss kar 😚"];
+
+function moveNo(){
+    noBtn.style.left = Math.random()*(window.innerWidth-120)+"px";
+    noBtn.style.top  = Math.random()*(window.innerHeight-120)+"px";
+    noBtn.innerText = texts[Math.floor(Math.random()*texts.length)];
+}
+
+function yesClick(){
+    document.getElementById("popup").style.display="block";
+}
+
+function createHeart(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*window.innerWidth+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
+</body>
+</html>
